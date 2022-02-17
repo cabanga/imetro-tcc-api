@@ -9,6 +9,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "moment": "^2.29.1",
     "nodemon": "^2.0.15",
     "web3": "^1.7.0"
   },
@@ -16,5 +17,3 @@
     "npm-run-all": "^4.1.5"
   }
 }
-
-
