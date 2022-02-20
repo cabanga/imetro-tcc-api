@@ -1,6 +1,21 @@
 require('dotenv/config')
 
 const env = process.env
+var express = require("express")
+const bodyParser = require('body-parser')
+const cors = require('cors')
+
+var app = express();
+var port = process.env.port || env.APP_PORT
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.listen(port, () => {
+  console.log(`Server running In http://${env.APP_HOST}:${env.APP_PORT}`);
+})
+
 
 /*
 
