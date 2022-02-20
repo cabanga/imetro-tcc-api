@@ -1,6 +1,7 @@
 {
   "name": "DIONE-DOC",
   "version": "1.0.0",
+  "type": "module",
   "main": "server.js",
   "license": "MIT",
   "scripts": {

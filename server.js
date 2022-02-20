@@ -1,10 +1,10 @@
-require('dotenv/config')
+import { } from 'dotenv/config'
 const env = process.env
+import express from 'express'
+import bodyParser from 'body-parser'
+import cors from 'cors'
 
-const express = require("express")
-const bodyParser = require('body-parser')
-const cors = require('cors')
-const ROUTES = require('./src/routes')
+import ROUTES from './src/routes/index.js'
 
 var app = express();
 var port = process.env.port || env.APP_PORT

@@ -1,18 +1,15 @@
-const express = require('express')
-const router = express.Router()
-const login = require('#controllers/auth.controller')
+import { Router } from 'express'
+import { sign_in } from '#controllers/auth.controller'
 
 
+const router = Router()
+
+router.route('/login').get(sign_in)
 
 
-router.get('/login', (req, res) => {
-  res.send({
-    status: true,
-    message: 'Login route'
-  })
-})
+export default router
 
-module.exports = router
+
 
 /*
 
@@ -20,7 +17,6 @@ import { sign_in, test } from '@controllers/auth.controller'
 
 const router = Router();
 
-router.route('/login').post(sign_in);
 router.route('/test').get(test);
 
 export default router;
