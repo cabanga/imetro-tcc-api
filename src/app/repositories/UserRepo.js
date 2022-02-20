@@ -7,7 +7,13 @@ export default {
 
 		let response = await user.sign_in()
 		return response.user
-	}
+	},
 
+	async sign_up(data) {
+		const user = new User(data)
+
+		let response = await user.sign_up()
+		return response.user
+	}
 
 }
