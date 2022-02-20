@@ -4,7 +4,7 @@ import { sign_in } from '#controllers/auth.controller'
 
 const router = Router()
 
-router.route('/login').get(sign_in)
+router.route('/login').post(sign_in)
 
 
 export default router

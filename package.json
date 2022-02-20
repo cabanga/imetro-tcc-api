@@ -35,6 +35,7 @@
   "imports": {
     "#controllers/*": "./src/app/controllers/*.js",
     "#models/*": "./src/app/models/*.js",
-    "#repo/*": "./src/app/repositories/*.js"
+    "#repo/*": "./src/app/repositories/*.js",
+    "#config/*": "./src/config/*.js"
   }
 }

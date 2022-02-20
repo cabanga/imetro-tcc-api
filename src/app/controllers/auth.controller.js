@@ -1,9 +1,14 @@
+import { User } from '#models/User'
 
 
 export const sign_in = async (req, res) => {
 
     try {
-        res.status(200).send('Login processo')
+        let request = req.body
+        const user = new User(request)
+        let response = await user.sign_in()
+
+        res.status(200).send(response)
     } catch (error) {
         console.log(error)
         res.status(500).send({ errors: error })
