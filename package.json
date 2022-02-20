@@ -11,6 +11,8 @@
   "dependencies": {
     "moment": "^2.29.1",
     "nodemon": "^2.0.15",
+    "express": "^4.17.1",
+    "dotenv": "^10.0.0",
     "web3": "^1.7.0"
   },
   "devDependencies": {

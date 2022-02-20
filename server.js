@@ -1,3 +1,9 @@
+require('dotenv/config')
+
+const env = process.env
+
+/*
+
 const url = 'HTTP://127.0.0.1:7545' // "https://eth-mainnet.alchemyapi.io/v2/Ty6kaYvH6OMi1MTrgUfVe9SJMS63I07O";
 
 const Web3 = require('web3')
@@ -11,6 +17,7 @@ provider.eth.getBlock('latest')
 })
 
 
+*/
 
 
 
