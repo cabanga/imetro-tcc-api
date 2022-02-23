@@ -1,8 +1,4 @@
 import FileRepo from '#repo/FileRepo'
-import multer from 'multer'
-
-const upload = multer({ dest: 'public/' }).single("document");
-
 
 
 export const upload_document = async (req, res) => {
@@ -11,6 +7,7 @@ export const upload_document = async (req, res) => {
         // ===================================================
         // ===================================================
 
+        /*
         upload(req, res, (err) => {
             if (err) {
                 res.status(400).send("Something went wrong!");
@@ -18,6 +15,7 @@ export const upload_document = async (req, res) => {
                 console.log(err)
             }
         })
+        */
 
 
         // ===================================================
