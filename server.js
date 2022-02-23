@@ -4,12 +4,6 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import fileupload from 'express-fileupload'
-import multer from 'multer'
-import path from 'path'
-
-import fs from "fs-extra";
-
-
 
 
 import ROUTES from './src/routes/index.js'
@@ -25,54 +19,6 @@ app.use(express.static('public'))
 
 
 app.use('/api/', ROUTES);
-
-
-// ===================================================
-// ===================================================
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, __dirname + "/public");
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.originalname);
-    },
-});
-
-const upload = multer({ storage: storage });
-
-app.post("/save-files", upload.single("files"), async (req, res) => {
-    if (res.status(200)) {
-
-        console.log("Your file has been uploaded successfully.");
-        console.log(req.files);
-
-
-        res.json({ message: "Successfully uploaded files" });
-        res.end();
-    }
-});
-
-// ===================================================
-// ===================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
