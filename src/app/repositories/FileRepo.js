@@ -1,10 +1,7 @@
 import moment from 'moment'
 import { sha1FileSync } from 'sha1-file'
-import multer from 'multer'
-import fs from 'fs'
 
-
-const default_path = './src/loadingFile'
+const default_path = './public'
 
 
 
