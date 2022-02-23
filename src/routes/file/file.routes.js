@@ -10,7 +10,7 @@ const upload = multer({ dest: 'public/' })
 
 const router = Router()
 
-router.route('/upload_document').post(upload.single('document'), upload_document)
+router.route('/upload_document').post(upload_document, upload.single('document'))
 
 
 
