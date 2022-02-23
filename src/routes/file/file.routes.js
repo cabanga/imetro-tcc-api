@@ -1,11 +1,11 @@
 import { Router } from 'express'
-import { get_hash } from '#controllers/file.controller'
+import { upload_document } from '#controllers/file.controller'
 
 
 const router = Router()
 
-router.route('/get_hash').post(get_hash)
-router.route('/payment').post(get_hash)
+router.route('/upload_document').post(upload_document)
+//router.route('/payment').post(get_hash)
 
 
 export default router

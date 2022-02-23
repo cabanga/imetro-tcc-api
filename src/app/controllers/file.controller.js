@@ -1,10 +1,11 @@
-import UserRepo from '#repo/UserRepo'
+import FileRepo from '#repo/FileRepo'
 
 
-export const get_hash = async (req, res) => {
+export const upload_document = async (req, res) => {
     try {
-        let data = req.body
-        const response = await UserRepo.sign_in(data)
+        let data = req.files
+
+        const response = await FileRepo.upload(data.document)
         res.status(200).send(response)
     } catch (error) {
         console.log(error)

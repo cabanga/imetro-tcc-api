@@ -3,6 +3,11 @@ const env = process.env
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
+import fileupload from 'express-fileupload'
+
+
+
+
 
 import ROUTES from './src/routes/index.js'
 
@@ -11,7 +16,8 @@ var port = process.env.port || env.APP_PORT
 
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json());
+app.use(bodyParser.json())
+app.use(fileupload())
 
 
 app.use('/api/', ROUTES);
@@ -21,7 +27,7 @@ app.use('/api/', ROUTES);
 
 
 app.listen(port, () => {
-  console.log(`Server running In http://${env.APP_HOST}:${env.APP_PORT}`);
+  console.log(`Server running In http://${env.APP_HOST}:${port}/api`);
 })
 
 
