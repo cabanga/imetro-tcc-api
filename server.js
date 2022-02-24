@@ -5,6 +5,9 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 import fileupload from 'express-fileupload'
 
+import StorageFile from '#repo/StorageFile'
+
+
 
 import ROUTES from './src/routes/index.js'
 
@@ -12,13 +15,52 @@ var app = express();
 var port = process.env.port || env.APP_PORT
 
 app.use(cors())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({
+    extended: false,
+    eepExtensions: true,
+    uploadDir: "uploads"
+}))
+
 app.use(bodyParser.json())
 app.use(fileupload())
+
 app.use(express.static('public'))
 
 
 app.use('/api/', ROUTES);
+
+
+
+app.post("/upload", async function (request, response) {
+    let doc = request.files.document
+
+    const result = await StorageFile.call(doc)
+
+
+
+    response.end(result);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
