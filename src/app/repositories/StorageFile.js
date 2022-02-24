@@ -1,9 +1,9 @@
-
+import moment from 'moment'
 import fs from 'fs'
 
 export default {
     async call(doc) {
-        let path_doc = `./public/uploads/${doc.name}`
+        let path_doc = `./public/uploads/${moment(new Date()).format("YYYYMMDDHH:mm:ss")}-${doc.name}`
 
         let fileStream = fs.createWriteStream(path_doc)
         fileStream.write(doc.data)

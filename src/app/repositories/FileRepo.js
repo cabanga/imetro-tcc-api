@@ -1,17 +1,11 @@
 import moment from 'moment'
 import { sha1FileSync } from 'sha1-file'
 
-const default_path = './public'
-
-
 
 export default {
 
-    async upload(file) {
-        //await this.save_file(file)
-
-        let file_path = `${default_path}/certificado-tcc-Imetro.pdf`
-        let hash = await sha1FileSync(file_path)
+    async validate_document(file, path) {
+        let hash = await sha1FileSync(path)
 
         let data = {
             file_name: file.name,
