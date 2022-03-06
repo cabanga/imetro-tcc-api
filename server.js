@@ -3,7 +3,7 @@ const env = process.env
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
-import fileupload from 'express-fileupload'
+import fileUpload from 'express-fileupload'
 
 
 
@@ -15,18 +15,43 @@ var port = process.env.port || env.APP_PORT
 
 app.use(cors())
 
+
+app.use(fileUpload({
+    useTempFiles: true,
+    safeFileNames: true,
+    uriDecodeFileNames: true,
+    tempFileDir: '/tmp/'
+}))
+
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+
+
+/*
 app.use(bodyParser.urlencoded({
     extended: false,
     eepExtensions: true,
     uploadDir: "uploads"
 }))
+*/
 
-app.use(bodyParser.json())
-app.use(fileupload())
 app.use(express.static('public'))
 
 app.use('/api/', ROUTES);
 
+
+/*
+app.post('/upload', async (req, res) => {
+
+    let doc = req.files.document
+
+    let data = {
+        name: doc.name,
+        md5: doc.md5
+    }
+    return res.send(data)
+})
+*/
 
 
 
