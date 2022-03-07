@@ -4,17 +4,13 @@ const url = "HTTP://127.0.0.1:7545"
 const web3 = new Web3(url);
 */
 
-const Web3 = require('web3')
-const provider = new Web3.providers.WebsocketProvider('ws://localhost:8545');
+import Web3 from 'web3'
+const provider = new Web3.providers.WebsocketProvider('wss://mainnet.infura.io/ws/v3/74281d1736ff4d23840f60dfddf151f8');
 let web3 = new Web3(provider)
 
-
-
-// Variables definition
-const privKey = '0xfdf95c08f8fde0a56776dc58e6c0c8c9fe01768be1461632fcadc5d04d08c284'; // Genesis private key
-const addressFrom = '0xb685B41D93d0727Cf0358231086B075F889114DD';
-const addressTo = '0x2946d174cE68Ce711D43F5A434C98F498bE91cb2';
-
+const privKey = 'e87ccff4f73d8d23fdffffb9293c40c681c1bf5299a3a820b8d12ede47efc3ca'
+const addressFrom = '0x6EC582871EF4456aaf959A35770965BD33eb8AAa'
+const addressTo = '0x07584f006f95064Bb0aD3802605b7cb2c7794225'
 
 
 const deploy = async () => {

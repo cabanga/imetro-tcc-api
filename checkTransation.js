@@ -1,4 +1,4 @@
-const Web3 = require('web3');
+import Web3 from 'web3'
 
 // Variables definition
 
@@ -20,7 +20,7 @@ class TransactionChecker {
         let block = await this.web3.eth.getBlock(1);
         let number = block.number;
         let transactions = block.transactions;
-        
+
 
         if (block != null && block.transactions != null) {
 
@@ -31,18 +31,18 @@ class TransactionChecker {
                 if (this.address == tx.to.toLowerCase()) {
                     console.log("from: " + tx.from.toLowerCase() + " to: " + tx.to.toLowerCase() + " value: " + tx.value);
                 }
-                
+
             }
         }
     }
 
-    async getBlock(number){
+    async getBlock(number) {
         let block = await this.web3.eth.getBlock(number);
         console.log("new block :", block)
     }
 }
 
-var transactionChecker = new  TransactionChecker('0xb083ceB513Ba86012476916c342B180e28F669Cb');
+var transactionChecker = new TransactionChecker('0x6e7fd2202C35c6AFe5cB4e748655c9765299cF1c');
 //transactionChecker.checkBlock();
 //transactionChecker.getBlock(1)
 
