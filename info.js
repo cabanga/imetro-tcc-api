@@ -9,8 +9,6 @@ const info = async () => {
     let block = await web3.eth.getBlockNumber()
     let nodeInfo = await web3.eth.getNodeInfo()
 
-    console.log(block)
-
     let hash_tans = '0x2ffc8ef834c7d9d709d6c8f8b97da0247b25346bd37ea10bcd3cdf79fddcee63'
     let transaction = await web3.eth.getTransaction(hash_tans)
 

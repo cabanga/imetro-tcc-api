@@ -42,6 +42,12 @@ export default {
         )
 
         return await Object(createReceipt)
+    },
+
+    async info_transation(data) {
+        let transaction = await web3.eth.getTransaction(data.transaction_hash)
+        let response = await web3.utils.toAscii(transaction.input)
+        return response
     }
 
 }
