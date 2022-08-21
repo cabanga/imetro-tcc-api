@@ -1,11 +1,15 @@
 import FileRepo from '#repo/FileRepo'
-//import StorageFile from '#repo/StorageFile'
-
 
 export const upload_document = async (req, res) => {
     try {
         let doc = req.files.document
-        const response = await FileRepo.validate_document(doc)
+
+        let user = {
+            uiid: req.body.uid,
+            email: req.body.email
+        }
+
+        const response = await FileRepo.validate_document( doc, user )
         res.status(200).send(response)
     } catch (error) {
         console.log(error)
