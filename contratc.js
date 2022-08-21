@@ -1,12 +1,12 @@
-const moment = require('moment')
+import moment from 'moment'
+import Web3 from 'web3'
 
-const Web3 = require('web3')
-const provider = new Web3.providers.WebsocketProvider('ws://localhost:8545');
+const provider = new Web3.providers.WebsocketProvider('ws://localhost:7545');
 let web3 = new Web3(provider)
 
-const privKey = '0x8bcab33055102bb984d22d084865398743d855043ffa4174ed67bb440eac1b2a'; // Genesis private key
-const addressFrom = '0x7fcDCb8c6aA678394781fe7F00652dAa63b70A53';
-const addressTo = '0xD5685B45e67e39d4Df74799e4AE85DFc388D94E7';
+const privKey = 'a296b24ee7fd7d63ac6ddd097a7aa15668c91be00db8ea9f6c22163f6e243cb3'; // Genesis private key
+const addressFrom = '0x691Bf86f4BDE3c1E0b7C9061ef75D442DCE19924';
+const addressTo = '0x5A97A99d30B22aD2485ABb988E04829D43E72b36';
 
 
 const contract = async () => {

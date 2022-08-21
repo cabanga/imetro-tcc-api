@@ -21,6 +21,7 @@ class TransactionChecker {
         let number = block.number;
         let transactions = block.transactions;
 
+        console.log(transactions)
 
         if (block != null && block.transactions != null) {
 
@@ -42,7 +43,7 @@ class TransactionChecker {
     }
 }
 
-var transactionChecker = new TransactionChecker('0x6e7fd2202C35c6AFe5cB4e748655c9765299cF1c');
+var transactionChecker = new TransactionChecker('0xed303298d9Ee857a9E58E4370ED6280829D12a98');
 //transactionChecker.checkBlock();
 //transactionChecker.getBlock(1)
 
